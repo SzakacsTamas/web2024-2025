@@ -1,0 +1,3 @@
+Űrlap ami 2 szám 1 művelet 
+gombnyomásra jelenjen meg az eredmény vagy a hiba üzenet
+NEM FORM legyen a megjelenites
