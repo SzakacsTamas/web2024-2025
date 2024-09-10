@@ -7,45 +7,77 @@
 <body>
 <style>
     #szia{
-        padding-left: 100px;
+        padding-left: 205px;
+        margin-top: -20px;
         
     }
     #szia2{
-        padding-left: 100px;
-        
+        padding-left: 2px;
+        margin-top: -6px;
     }
+    #sorok {
+  writing-mode: vertical-lr;
+}
+    #table{
+        background-color: whitesmoke;
+    }
+
 </style>
 
 <form class="slidecontainer">
     <label for="oszlopok">Oszlopok: </label>
-  <input type="range" min="1" max="20" value="10" class="slider1" id="oszlopok">
-  <p id="szia">Érték: <span id="demo1"></span></p>
+  <input type="range" min="1" max="20" value="1" class="slider1" id="oszlopok">
+  <p id="szia"><span id="demo1"></span></p>
 
-  <label for="sorok">Sorok: </label>
-  <input type="range" min="1" max="20" value="10" class="slider2" id="sorok">
-  <p id="szia2">Érték: <span id="demo2"></span></p>
+  <label for="sorok">Sorok: </label><br>
+  <input type="range" min="1" max="20" value="1" class="slider2" id="sorok">
+  <p id="szia2"><span id="demo2"></span></p>
 </form>
-
+<table id="table" class="table">
+    <tr>
+        <td>asdsadas</td>
+    </tr>
+    
+</table>
 <script>
-var slider1 = document.getElementById("oszlopok");
-var output1 = document.getElementById("demo1");
-output1.innerHTML = slider1.value;
+    const slider1 = document.getElementById("oszlopok");
+    const output1 = document.getElementById("demo1");
+    const slider2 = document.getElementById("sorok");
+    const output2 = document.getElementById("demo2");
+    const table = document.getElementById("table");
 
-slider1.oninput = function() {
-  output1.innerHTML = this.value;
+    output1.innerHTML = slider1.value;
+    output2.innerHTML = slider2.value;
 
-  
-}
+    slider1.oninput = function() {
+        output1.innerHTML = this.value;
+        tabla();
+    }
 
-var slider2 = document.getElementById("sorok");
-var output2 = document.getElementById("demo2");
-output2.innerHTML = slider2.value;
+    slider2.oninput = function() {
+        output2.innerHTML = this.value;
+        tabla();
+    }
 
-slider2.oninput = function() {
-  output2.innerHTML = this.value;
+    function tabla() {
+        const columns = parseInt(slider1.value);
+        const rows = parseInt(slider2.value);
 
-  
-}
+        table.innerHTML = ""; 
+
+        for (let i = 0; i < rows; i++) {
+            const row = document.createElement("tr");
+            for (let j = 0; j < columns; j++) {
+                const cell = document.createElement("td");
+                cell.textContent = (i + 1) * (j + 1); 
+                row.appendChild(cell);
+            }
+            table.appendChild(row);
+        }
+    }
+
+    
+    tabla();
 </script>
 
 </body>
