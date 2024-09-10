@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<style>
+    #szia{
+        padding-left: 100px;
+        
+    }
+    #szia2{
+        padding-left: 100px;
+        
+    }
+</style>
+
+<form class="slidecontainer">
+    <label for="oszlopok">Oszlopok: </label>
+  <input type="range" min="1" max="20" value="10" class="slider1" id="oszlopok">
+  <p id="szia">Érték: <span id="demo1"></span></p>
+
+  <label for="sorok">Sorok: </label>
+  <input type="range" min="1" max="20" value="10" class="slider2" id="sorok">
+  <p id="szia2">Érték: <span id="demo2"></span></p>
+</form>
+
+<script>
+var slider1 = document.getElementById("oszlopok");
+var output1 = document.getElementById("demo1");
+output1.innerHTML = slider1.value;
+
+slider1.oninput = function() {
+  output1.innerHTML = this.value;
+
+  
+}
+
+var slider2 = document.getElementById("sorok");
+var output2 = document.getElementById("demo2");
+output2.innerHTML = slider2.value;
+
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+
+  
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+2 Beviteli lehetőség 1-20 
+Táblázat
+1 bvitel sorok száma
+2 bevitel oszlopok száma
+Ahogy változik a bevitel úgy változzon azonnal a beviteli rész is
+(Szorzótábla szerűség)
