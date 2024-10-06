@@ -1,0 +1,20 @@
+body{
+    background-color: gainsboro;
+
+}
+div{
+    border: 3px solid black;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 30px;
+    background-color: cornflowerblue;
+
+}
+p{
+    font-weight: bold
+}
+#cica {
+    display: none; /* Alapértelmezetten nem jelenik meg a kép */
+    margin-top: 20px;
+    max-width: 150px; /* A kép méretét maximalizálja */
+  }

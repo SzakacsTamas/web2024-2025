@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GögörG*ci</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div>
+        <p>2. Feladat</p>
+        <a href="https://www.w3schools.com/">w3schools</a>
+        
+    </div>
+    <div>
+        <p>3. Feladat</p>
+        <button onclick="ido()">Aktuális idő</button>
+        <p id="datum"></p>
+
+
+        
+    </div>
+    <div>
+        <p>4. Feladat</p>
+        <p id="kep"></p>
+        <button onclick="allat()">Állat</button>
+        <img id="cica" src="index.jpg" alt="">
+
+        
+    </div>
+    <script>
+        function ido(){
+            let ma = new Date();
+            const ora = String(ma.getHours()).padStart(2, '0');  
+            const perc = String(ma.getMinutes()).padStart(2, '0');
+            const masodperc = String(ma.getSeconds()).padStart(2, '0');
+            let ido = ora+":"+perc+":"+masodperc;
+
+            document.getElementById("datum").innerHTML=ido;
+        }
+        function allat(){
+            const petImage = document.getElementById("cica");
+    
+    // A kép megjelenítése
+            petImage.style.display = "block";
+        }
+    </script>
+</body>
+</html>
