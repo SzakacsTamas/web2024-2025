@@ -1,0 +1,16 @@
+table {
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer; /* Mutasd, hogy a cellák kattinthatók */
+}
+input {
+    width: 100%; /* Input mező szélessége 100% */
+    height: 100%; /* Input mező magassága 100% */
+    box-sizing: border-box; /* Margók és padding figyelembevételéhez */
+}

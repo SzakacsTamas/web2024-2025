@@ -1,0 +1,9 @@
+Táblázat 8x8 javascriptel létrehozni
+Ciklus ami annyi szor végig fut ahány sor van
+létre kell hhozni egy sor elemet
+td
+Bevinni adatokat, adatok legyenek barmi aztán csak számok
+
+Elso sor th
+Elso oszlop th 
+és ebbe a kettőbe a megfelelő sorok és megfelelő oszlopok összegét jelentise meg
