@@ -1,0 +1,22 @@
+body{
+    background-color: gainsboro;
+    align-items: center;
+    justify-content: center;
+}
+#hozzaAd{
+    width: 10vw;
+    height: 5vh;
+    font-size: 2vw;
+
+}
+#keret{
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: aliceblue;
+}
+#szovegDoboz{
+    align-items: center;
+    
+    display: flex;
+}
