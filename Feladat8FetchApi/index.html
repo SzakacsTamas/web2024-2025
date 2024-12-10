@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //console.log(fetch('http://request.in/api/users/55'));
+        const newUser={
+            name: 'Maria',
+            job: 'Teacher'
+        };
+
+        fetch('https://reqres.in/api/users',
+        {
+            method: 'POST',
+            headers:
+            {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newUser)
+        })
+            .then(res => {
+                if(!res.ok){
+                    console.log('problem');
+                    return;
+                }
+                return res.json()
+            })
+            .then(data => {console.log(data);
+            })
+            .catch(error => {console.log(error);
+
+            });
+            
+        
+    </script>
+</body>
+</html>
