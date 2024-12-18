@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+#tarolo {
+    margin-bottom: 20px;
+}
+
+#kontrolPanel {
+    text-align: left;
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    background-color: rgb(116, 165, 255);
+    border: 4px solid rgb(57, 87, 143);
+    padding: 20px;
+    font-family: fantasy;
+    font-size: large;
+
+}
+#alapDiv{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 0%;
+}

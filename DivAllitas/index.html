@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktív Div</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tarolo">
+        <div id="alapDiv"></div>
+    </div>
+
+    <div id="kontrolPanel">
+        <label for="szelesseg">Szélesség:</label>
+        <input type="range" id="szelesseg" min="10" max="800" value="200">
+        <br>
+
+        <label for="magassag">Magasság:</label>
+        <input type="range" id="magassag" min="10" max="800" value="200">
+        <br>
+        <label for="keretVastagsag">Keret vastagság:</label>
+        <input type="range" id="keretVastagsag" min="0" max="100" value="5">
+        <br>
+        <label for="kerekito">Lekerekítés:</label>
+        <input type="range" id="kerekito" min="0" max="50" value="0">
+        <br>
+        <label for="szinValaszto">Szín:</label>
+        <input type="color" id="szinValaszto" value="#ffffff">
+        <br>
+        <label for="keretSzin">Keret Szín:</label>
+        <input type="color" id="keretSzin" value="#000000">
+        <br>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
