@@ -1,0 +1,2 @@
+Készíteni egy 100x100-as négyzetekből álló alakzat
+A négyzetek működjenek úgy mint egy rajzoló program, pixel art, a kiválasztott színű legyen a négyzet színe, ahol lehetőségünk van egyéni színek létrhozására

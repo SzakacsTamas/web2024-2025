@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(100, 10px); 
+            grid-template-rows: repeat(100, 10px); 
+            gap: 1px; 
+            border: 1px solid black;
+        }
+
+        .pixel {
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            cursor: pointer; 
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <input type="color" id="szinBeker">
+    <div class="container" id="pixelCanvas"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var szin = document.getElementById("szinBeker");
+        var festesAktiv = false; 
+        $(document).ready(function() {
+            
+            for (let i = 0; i < 100 * 100; i++) {
+                $('#pixelCanvas').append('<div class="pixel"></div>');
+            }
+
+          
+            $('.pixel').mousedown(function() {
+                festesAktiv = true;
+                $(this).css('background-color', szin.value);
+            });
+
+          
+            $('.pixel').mousemove(function() {
+                if (festesAktiv) {
+                    $(this).css('background-color', szin.value);
+                }
+            });
+
+         
+            $(document).mouseup(function() {
+                festesAktiv = false;
+            });
+
+          
+            $(document).mouseleave(function() {
+                festesAktiv = false;
+            });
+        });
+    </script>
+</body>
+</html>
