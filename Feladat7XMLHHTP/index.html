@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="init()">
+    <script>
+      function init() {
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          let adatok = JSON.parse(this.responseText);
+          let kepUrl = adatok.results[0].picture.large;
+          let kep = document.createElement("img");
+          kep.src = kepUrl;
+          document.body.appendChild(kep);
+        };
+        xhr.open("GET", "https://randomuser.me/api");
+        xhr.send();
+
+        fetch("https://randomuser.me/api")
+          .then((x) => x.json())
+          .then((adatok2) => {
+            
+            let kepUrl = adatok2.results[0].picture.large;
+            let kep = document.createElement("img");
+            kep.src = kepUrl;
+            document.body.appendChild(kep);
+          });
+
+
+        fetch("https://randomuser.me/api")
+          .then((x) => {console.log(x);return x.json()})
+          .then((adatok3) => {
+            
+            let kepUrl = adatok3.results[0].picture.large;
+            let kep = document.createElement("img");
+            kep.src = kepUrl;
+            document.body.appendChild(kep);
+          });
+
+          
+      }
+    </script>
+  </body>
+</html>

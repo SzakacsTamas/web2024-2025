@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+
+    }
+    #negyzet {
+        top: 0%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: green;
+      color: white;
+      font-size: 2vw;
+      font-family: 'Times New Roman', Times, serif;
+      position: absolute;
+      
+    }
+  </style>
+</head>
+<body>
+  <div id="negyzet">0</div>
+
+  <script>
+    const negyzet = document.getElementById('negyzet');
+    let szamolas = 0;
+    let novekedj = true;
+
+    function negyzetValtozas() {
+
+      negyzet.textContent = szamolas;
+      const meret = 180 + szamolas * 8;
+      const meret2 = 15 + szamolas * 2;
+      negyzet.style.width = meret+'px';
+      negyzet.style.height = meret+'px';
+      negyzet.style.fontSize=meret2+'px';
+
+    //A táblán is csak 99-ig megy úgyhogy itt is 
+      if (novekedj) {
+        szamolas++;
+        if (szamolas > 98) novekedj = false;
+      } else {
+        szamolas--;
+        if (szamolas < 1) novekedj = true;
+      }
+    }
+
+
+    setInterval(negyzetValtozas, 50);
+  </script>
+</body>
+</html>
