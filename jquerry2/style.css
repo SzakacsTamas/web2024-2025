@@ -1,3 +1,6 @@
 body{
     background-color: rgb(211, 211, 211);
 }
+#kartya{
+    border: 5px solid black;
+}

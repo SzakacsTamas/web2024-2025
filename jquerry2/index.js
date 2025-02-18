@@ -28,7 +28,9 @@ function termekKartya(nevURL,kepURL,leirasURL)
     */
     let keret=jQuery("<div>")
     keret.prop("class","card")
+    keret.prop("id","kartya")
     keret.addClass("col-3");
+    keret.on("click",function(){alert("safs")})
 
     let kep=jQuery("<img>")
     kep.prop("src",kepURL)
