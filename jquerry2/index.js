@@ -1,52 +1,61 @@
-console.log("mukdik")
+$.ajax({
+  url: "https://fakestoreapi.com/products",
+  dataType: "json",
+  success: function (data) {
+      console.log(data);
+      data.forEach(product => {
+          console.log(product);
+          let kartya = termekKartya(product.id,product.title, product.image, product.description);
+          $("#termekLista").append(kartya);
+      });
+  }
+});
 
+function termekKartya(id,nev,kepUrl,leiras) {
+  let kartya = jQuery("<div>");
+  kartya.prop("class","card");
+  kartya.addClass("col-3");
+  kartya.on("click", function(){togglePopup()});
+  
+  $.ajax({
+      url: "https://fakestoreapi.com/products/id",
+      dataType: "json",
+      success: function (data) {
+          console.log(data);
+          let cim=jQuery("<h3>");
+          cim.html(data.title)
+          $("#termekAdat").append(cim);
 
-$.ajax({url:"https://fakestoreapi.com/products",
-    dataType:"json",
-    success:function(data){console.log(data);
-        data.forEach(product => {
-         console.log(product);   
-         let kartya=termekKartya(product.title,product.image,product.description);
-         $("#termekLista").append(kartya);
-        });
-    }
+          let ar=jQuery("<div>")
+          ar.html(data.price);
+          $("termekAdat").append()
+        }});
 
-    
-})
+  let kep = jQuery("<img>");
+  kep.prop("src", kepUrl);
+  kep.prop("class", "card-img-top");
+  kep.prop("alt", nev);
 
-function termekKartya(nevURL,kepURL,leirasURL)
-{
-    /*
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-    */
-    let keret=jQuery("<div>")
-    keret.prop("class","card")
-    keret.addClass("col-3");
+  let cardBody = jQuery("<div>");
+  cardBody.prop("class", "card-body");
 
-    let kep=jQuery("<img>")
-    kep.prop("src",kepURL)
-    kep.prop("class","card-img-top")
-    kep.prop("style","width: 18rem")
-    kep.prop("alt",nevURL)
+  let cardTitle = jQuery("<h5>");
+  cardTitle.prop("card-title");
+  cardTitle.text(nev);
 
-    let nev=jQuery("<h5>")
-    nev.prop("class","card-title")
-    nev.html(nevURL)
+  let cardText = jQuery("<p>");
+  cardText.prop("class", "card-text");
+  cardText.text(leiras);
 
-    let leiras=jQuery("<p>")
-    leiras.prop("class","card-text")
-    leiras.html(leirasURL)
+  cardBody.append(cardTitle);
+  cardBody.append(cardText);  
 
-    keret.append(kep)
-    keret.append(nev)
-    keret.append(leiras)
-    return keret;
-    
+  kartya.append(kep);
+  kartya.append(cardBody);
+
+  return kartya;
+
+}
+function togglePopup() {
+  $(".content").toggle();
 }

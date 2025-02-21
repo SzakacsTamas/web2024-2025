@@ -21,6 +21,19 @@ legyen ugyanott egy kuka ikon, ami törli a szerverről (nem valós törlés les
 ha nem mennek az ikonok, akkor sima gomb legyen
 legyen egy "új termék" gomb, amivel új elemet lehet hozzáadni
 </pre>
+<button onclick="togglePopup()">Show</button>
+<div class="content">
+    <div onclick="togglePopup()" class="close-btn">&times</div>
+    <div id="termekAdat">
+        <h3>title</h3>
+        <div>Ár: price</div>
+        <p>Leírás: description</p>
+        <div>Kategória: category</div>
+        <img src="" alt="">
+        <div>Értékelés</div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row" id="termekLista">
 
